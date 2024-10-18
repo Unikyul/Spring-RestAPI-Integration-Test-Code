@@ -8,8 +8,8 @@ import org.example.springv3.core.util.Resp;
 import org.example.springv3.user.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @Controller
@@ -32,7 +32,7 @@ public class BoardController {
     public ResponseEntity<?> removeBoard(@PathVariable("id") Integer id, HttpServletRequest request) {
         User sessionUser = (User) session.getAttribute("sessionUser");
         boardService.게시글삭제하기(id, sessionUser);
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(Resp.ok(null));
     }
 
 
