@@ -16,7 +16,8 @@ public class CorsFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) res;
 
         response.setHeader("Access-Control-Expose-Headers", "Authorization");
-        response.setHeader("Access-Control-Allow-Origin", "*");
+        //프론트쪽 포트 번호만 허용해주면 된다. "*" 를 해두는 것은 말이 안 된다.
+        response.setHeader("Access-Control-Allow-Origin", "3000");
         response.setHeader("Access-Control-Allow-Methods", "POST, PUT, PATCH, GET, DELETE, OPTIONS");
         response.setHeader("Access-Control-Max-Age", "3600");
         response.setHeader("Access-Control-Allow-Headers",
